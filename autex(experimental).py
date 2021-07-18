@@ -15,7 +15,7 @@ Class Transcrib:
    def readOrden()
         self.text
       
-   def read(self,j,k):
+   def read(self,k):
         print(self.titulo[j])
         print(self.texto[k])
       
