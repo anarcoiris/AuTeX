@@ -240,7 +240,7 @@ class Nota:
         print(f'{self.E}|--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}---------------|')
         print(f'0|   1   x   3   x   5   x   7   x   9   x   x   12   x   x   15  ')
 
-        return print("done!")
+        return print('\n Rock  \n     n \n                 "Roll ')
 
 
 nota1=Nota()
