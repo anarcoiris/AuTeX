@@ -1,6 +1,7 @@
 #! python3
-#letrat=["A","As","B","C","Cs","D","Ds","E","F","Fs","G","Gs"]
-#freqt=[220,233,247,262,277,293,311,329,349,369,391,415]
+import json
+#letratupla=["A","As","B","C","Cs","D","Ds","E","F","Fs","G","Gs"]
+#freqtupla=[220,233,247,262,277,293,311,329,349,369,391,415]
 Quintas= ["F","C","G","D","A","E","B","F#","C#","G#","D#","A#"]
 Frecuencias=[349,262,391,293,220,329,311,369,277,293,415,329,233]
 unota=""
@@ -13,8 +14,20 @@ class Nota:
     def __init__(self):
         self.nota=input("Ingrese la nota tónica: ")
         self.modo=input("Introduzca el modo: ")
-        self.p1cdq=0
-        self.p2cdq=0
+        self.p1cdq="--"
+        self.p2cdq="--"
+        self.A="--"
+        self.As="--"
+        self.B="--"
+        self.C="--"
+        self.Cs="--"
+        self.D="--"
+        self.Ds="--"
+        self.E="--"
+        self.F="--"
+        self.Fs="--"
+        self.G="--"
+        self.Gs="--"
     def ObtenerNota(self):
         i=0
         for x in Quintas:
@@ -86,39 +99,51 @@ class Nota:
         for hertz in sorted(self.penta):
             if hertz<225:
                 self.cifra.append("A")
+                self.A="A"
                 continue
             elif hertz<240:
                 self.cifra.append("A#")
+                self.As="A#"
                 continue
             elif hertz<255:
                 self.cifra.append("B")
+                self.B="B"
                 continue
             elif hertz<270:
                 self.cifra.append("C")
+                self.C="C"
                 continue
             elif hertz<285:
                 self.cifra.append("C#")
+                self.Cs="C#"
                 continue
             elif hertz<305:
                 self.cifra.append("D")
+                self.D="D"
                 continue
             elif hertz<320:
                 self.cifra.append("D#")
+                self.Ds="D#"
                 continue
             elif hertz<340:
                 self.cifra.append("E")
+                self.E="E"
                 continue
             elif hertz<360:
                 self.cifra.append("F")
+                self.F="F"
                 continue
             elif hertz<380:
                 self.cifra.append("F#")
+                self.Fs="F#"
                 continue
             elif hertz<405:
                 self.cifra.append("G")
+                self.G="G"
                 continue
             elif hertz<425:
                 self.cifra.append("G#")
+                self.Gs="G#"
                 continue
         print("La tónica es "+self.nota)
         print("Las frecuencias ")
@@ -131,40 +156,52 @@ class Nota:
         self.cifra=[]
         for hertz in self.penta:
             if hertz<225:
-                self.cifra.append("A")
+                self.cifra.append("A ")
+                self.A="A "
                 continue
             elif hertz<240:
                 self.cifra.append("A#")
+                self.As="A#"
                 continue
             elif hertz<255:
-                self.cifra.append("B")
+                self.cifra.append("B ")
+                self.B="B "
                 continue
             elif hertz<270:
-                self.cifra.append("C")
+                self.cifra.append("C ")
+                self.C="C "
                 continue
             elif hertz<285:
                 self.cifra.append("C#")
+                self.Cs="C#"
                 continue
             elif hertz<305:
-                self.cifra.append("D")
+                self.cifra.append("D ")
+                self.D="D "
                 continue
             elif hertz<320:
                 self.cifra.append("D#")
+                self.Ds="D#"
                 continue
             elif hertz<340:
-                self.cifra.append("E")
+                self.cifra.append("E ")
+                self.E="E "
                 continue
             elif hertz<360:
-                self.cifra.append("F")
+                self.cifra.append("F ")
+                self.F="F "
                 continue
             elif hertz<380:
                 self.cifra.append("F#")
+                self.Fs="F#"
                 continue
             elif hertz<405:
-                self.cifra.append("G")
+                self.cifra.append("G ")
+                self.G="G "
                 continue
             elif hertz<425:
                 self.cifra.append("G#")
+                self.Gs="G#"
                 continue
         print("La tónica es "+self.nota)
         print("Las frecuencias ")
@@ -192,18 +229,32 @@ class Nota:
             self.cifra.append(Quintas[(self.posiquinta+5)])
             [*self.Jonico,*self.cifra]
             print(list([*self.Jonico,*self.cifra]))
+        return self
+    def imprPaintFret(self):
+        print('\n \n')
+        print(f'{self.E}|--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}---------------|')
+        print(f'{self.B}|--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}---------------|')
+        print(f'{self.G}|--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}---------------|')
+        print(f'{self.D}|--{self.Ds}--{self.E}--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}---------------|')
+        print(f'{self.A}|--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}---------------|')
+        print(f'{self.E}|--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}---------------|')
+        print(f'0|   1   x   3   x   5   x   7   x   9   x   x   12   x   x   15  ')
+
+        return print("done!")
+
 
 nota1=Nota()
 
 nota1.ObtenerNota()
 nota1.Obtenerpenta()
-##if nota1.ordenq!= 0:
-    ##nota1.freq2ks()
-##else:
-    ##nota1.freq2kus()
-nota1.freq2kus()
+if nota1.ordenq!= 0:
+    nota1.freq2ks()
+else:
+    nota1.freq2kus()
+#nota1.freq2kus()
 nota1.funciontonal()
 nota1.modoJonico()
 nota1.circuloquintas()
+nota1.imprPaintFret()
 
 #Paso2=Escala(tnota,tmodo)
