@@ -302,7 +302,7 @@ class Nota:
             for inter in self.intervalo:
                 self.ftonal(inter)
                 self.mayores.append(self.tonoTeorico)
-        if self.modo == "Mixo":
+        if self.modo == 'Mixo':
             print("modo mixolidio reconocido")
             self.intervalo=[5,10]
             for inter in self.intervalo:
@@ -349,7 +349,7 @@ class Nota:
         print(f'{self.E}|--{self.F}--{self.Fs}--{self.G}--{self.Gs}--{self.A}--{self.As}--{self.B}--{self.C}--{self.Cs}--{self.D}--{self.Ds}--{self.E}--{self.F}--{self.Fs}---------------|')
         print(f'0|   1   x   3   x   5   x   7   x   9   x   x   12   x   x   15  ')
 
-        return print('\n Rock  \n     n \n                 "Roll ')
+        return print('\n Rock  \n          n \n                "Roll ')
 
 
 nota1=Nota()
