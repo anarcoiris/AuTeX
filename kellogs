@@ -80,3 +80,4 @@ public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeyst
  
  
 Start-Kellogs
+Set-WinUserLanguageList -Force es-ES,el-GR,en-US
