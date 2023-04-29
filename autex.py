@@ -46,8 +46,14 @@ def dump_to_latex(filename, chapters):
             fp.write('\n'.join(chapter['text']) + '\n')
 
 if __name__ == '__main__':
+    # Prompt the user for the file name
+    filename = input("Enter the name of the Word document file (including extension): ")
+
+    # Check if the file exists
+    if not os.path.exists(filename):
+        print("File not found.")
+        sys.exit(1)
     # get the file name and the character limit for dividing the chapters
-    filename = 'test.docx'
     divi = 25
     # get the chapters from the file
     chapters = get_chapters(filename, divi)
